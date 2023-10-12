@@ -1,8 +1,8 @@
-# Ignore the virtual envirment
+# Ignore python virtual envirment
 venv/
 
-# Ignore python errors
-__pycache__
+# Ignore python cache
+__pycache__/
 
-# Ignore vscode installations
+# Ignore vscode configurations
 .vscode/
