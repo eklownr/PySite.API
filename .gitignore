@@ -2,7 +2,7 @@
 venv/
 
 # Ignore python errors
-__pycache/
+__pycache__
 
 # Ignore vscode installations
 .vscode/
