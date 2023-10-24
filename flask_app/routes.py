@@ -3,5 +3,5 @@ from flask import jsonify
 
 @app.route('/api/items')
 def items():
-    my_object = {"user_name": "Richard", "Age": 57}
+    my_object = {"user_name": "Christian", "Age": 29}
     return jsonify(my_object)
