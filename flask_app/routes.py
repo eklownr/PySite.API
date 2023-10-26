@@ -5,3 +5,15 @@ from flask import jsonify
 def items():
     my_object = {"user_name": "Christian", "age": 29, "id": 1}
     return jsonify(my_object)
+
+@app.route('/api/add')
+def add_user():
+    pass
+
+@app.route('/api/del')
+def del_user():
+    pass
+
+@app.route('/api/mod')
+def mod_user():
+    pass
