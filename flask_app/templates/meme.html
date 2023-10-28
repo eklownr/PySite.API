@@ -1,0 +1,9 @@
+
+{% extends "base.html" %}
+{% block main %}
+<p>Here is some random meme from Reddit. <a href="/meme"> Refresh </a></p>
+<h2>Title: {{title}}</h2>
+<p><img src="{{meme_pic}}" alt="some meme"></p>
+<p>Current subreddit: {{subreddit}}</p>
+ 
+{% endblock %}

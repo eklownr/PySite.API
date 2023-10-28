@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FLASK and HTMX</title>
+    <script src="https://unpkg.com/htmx.org"></script>
+    <link rel="stylesheet" href="../static/css/topNav.css">
+    <link rel="stylesheet" href="../static/css/pysite.css">
+</head>
+<body>
+    <!-- Top navigation bar on all pages-->
+    <div class="topnav">
+        <a href="/home">&#x2615;</a>
+        <a href="/meme">Memes</a>
+    </div>
+    <!-- Add all new pages here with { }-->
+    {% block main %}{% endblock %}
+</body>
+</html>

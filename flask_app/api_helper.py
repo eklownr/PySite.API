@@ -1,5 +1,4 @@
 import requests, json
-from flask import jsonify
 
 def get_response(target_url="http://jsonplaceholder.typicode.com/users"): 
     get_url = requests.get(str(target_url))
@@ -37,4 +36,25 @@ def get_persons():
         9: 'Glenna Reichert', 
         10: 'Clementina DuBuque',
     }
-    return jsonify(persons)
+    return persons
+
+def get_potter_list():
+    potters = [
+        {"id": 1, "name": "Minerva McGonagall"},
+        {"id": 2, "name": "Luna Lovegood"},
+        {"id": 3, "name": "Hermione Granger"},
+        {"id": 4, "name": "Rubeus Hagrid"},
+        {"id": 5, "name": "Sirius Black"}, 
+        {"id": 6, "name": "Harry Potter"},  
+        {"id": 7, "name": "Albus Dumbledore"},  
+        {"id": 8, "name": "Severus Snape"},
+        {"id": 9, "name": "Sirius Black"}, 
+        {"id": 10, "name": "Neville Longbottom"},   
+        {"id": 11, "name": "Dobby"},
+        {"id": 12, "name": "Ginny Weasley"},   
+        {"id": 13, "name": "Draco Malfoy"}, 
+        {"id": 14, "name": "Bellatrix Lestrange"},  
+        {"id": 15, "name": "Ronald Weasley"},
+        # Alastor Moody
+    ]
+    return potters
