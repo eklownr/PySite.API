@@ -10,5 +10,21 @@
         </form>
         <div id="output" hx-swap="outerHTML"></div>
     </div>
+    <div class="block">
+        <h2>HTMX</h2>
+            <div className='block'>
+                <p>add htmx-test here...</p>
+                <button 
+                hx-post="/info" 
+                hx-select="#swaped"
+                hx-swap="outerHTML">
+                Click Me
+                </button>
+                <div id='swaped'>
+                    <p>some text....</p>
+                </div>
+            </div>
+
+    </div>
 
 {% endblock %}

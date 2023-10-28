@@ -80,3 +80,7 @@ def meme():
 def update():
     name = request.form.get('name')
     return f'<p>Hello, {name}! <a href="/meme"> watch this meme! </a></p>'
+
+@app.route("/info", methods=['POST'])
+def info():
+    return '<h2> Som new text from backend! <h2/>'
