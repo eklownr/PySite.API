@@ -1,7 +1,7 @@
 from flask_app import app
 from flask import jsonify, render_template, request
 from . api_helper import *
-
+from datetime import datetime
 
 
 @app.route('/api/items')
@@ -81,6 +81,7 @@ def update():
     name = request.form.get('name')
     return f'<p>Hello, {name}! <a href="/meme"> watch this meme! </a></p>'
 
-@app.route("/info", methods=['POST'])
+@app.route("/info", methods=['POST', 'GET'])
 def info():
-    return '<h2> Som new text from backend! <h2/>'
+    now = datetime.now()
+    return f'<h3>{now.hour}:{now.minute}:{now.second} <h3/>'
