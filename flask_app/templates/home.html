@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block main %}
+
     <div class="block">
      <h1>Welcome!</h1>
         <form hx-post="/api/update" hx-target="#output">
@@ -10,10 +11,4 @@
         <div id="output" hx-swap="outerHTML"></div>
     </div>
 
-    <!--Testar class block-->
-    <div class="block"><p>testing... </p> </div>
-
-    <!-- testar .block -->
-    <h2>h2 utan block</h2>
-    <h2 class="block">h2 med block</h2>
 {% endblock %}
