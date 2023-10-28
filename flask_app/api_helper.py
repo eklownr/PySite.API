@@ -1,4 +1,5 @@
 import requests, json
+from flask import jsonify
 
 def get_response(target_url="http://jsonplaceholder.typicode.com/users"): 
     get_url = requests.get(str(target_url))
@@ -22,3 +23,18 @@ def response_to_dict(response, dict_key="name"):
 
 # TEST
 # print(response_to_dict(get_response()))
+
+def get_persons():
+    persons = {
+        1: 'Leanne Graham',
+        2: 'Ervin Howell', 
+        3: 'Clementine Bauch', 
+        4: 'Patricia Lebsack', 
+        5: 'Chelsey Dietrich', 
+        6: 'Mrs. Dennis Schulist', 
+        7: 'Kurtis Weissnat', 
+        8: 'Nicholas Runolfsdottir V', 
+        9: 'Glenna Reichert', 
+        10: 'Clementina DuBuque',
+    }
+    return jsonify(persons)

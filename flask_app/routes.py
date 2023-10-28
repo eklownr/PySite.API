@@ -1,6 +1,6 @@
 from flask_app import app
 from flask import jsonify
-from . api_helper import get_response, response_to_list
+from . api_helper import get_response, response_to_list, get_persons
 
 @app.route('/api/items')
 def items():
@@ -21,5 +21,5 @@ def mod_user():
 
 @app.route('/api/view')
 def view_users():
-    user_name = response_to_list(get_response())
-    return jsonify(user_name)
+    persons = get_persons()
+    return persons
