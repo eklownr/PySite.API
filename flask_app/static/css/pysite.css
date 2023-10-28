@@ -1,0 +1,41 @@
+.block {
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    width: auto;
+    height: auto;
+    outline: solid 2px chartreuse;
+    background-color: rgb(83, 79, 79);
+}
+
+
+h1, h2, h3 {
+    
+    padding: 2px 16px;
+}
+
+
+body {
+    background-color: rgb(42, 41, 41);
+    margin: 0px;
+    color: antiquewhite;
+    text-align: left;
+}
+
+p {
+    text-align: left;
+    background-color: rgb(83, 79, 79);
+    padding: 2px 16px;
+}
+
+form {
+    background-color: rgb(83, 79, 79);
+    padding: 2px 16px;
+}
+
+input {
+    background-color: #333;
+    color: antiquewhite;
+    padding: 2px 22px;
+}
