@@ -14,9 +14,19 @@ h1, h2, h3 {
     padding: 2px 16px;
 }
 
+a:hover {
+    background-color: #ffa914;
+    color: black;
+}
+
+a {
+    color: antiquewhite;
+}
+
+
 
 body {
-    background-color: rgb(42, 41, 41);
+    background-color: rgb(37, 37, 37);
     margin: 0px;
     color: antiquewhite;
     text-align: left;
@@ -24,12 +34,10 @@ body {
 
 p {
     text-align: left;
-    background-color: rgba(83, 79, 79, 0.3);
     padding: 2px 16px;
 }
 
 form {
-    background-color: rgba(83, 79, 79), 0.6;
     padding: 2px 16px;
 }
 

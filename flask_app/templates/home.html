@@ -12,33 +12,19 @@
     </div>
     <div class="block">
         <h2>More HTMx</h2>
-            <div className='block'>
-
-                <script src="https://unpkg.com/htmx.org@1.7.0"></script>
-                <button
-                hx-get="https://v2.jokeapi.dev/joke/Any?format=txt&safe-mode"
-                hx-target="#output2"
-                >Amuse Me</button>
-                <p id="output2">Why do Python programmers wear glasses? Because they can't C.</p>
-
-                <div id="tell_time"> <p>...</p>
-                    <button 
-                    hx-post="/info" 
-                    hx-select="#tell_time"
-                    hx-swap="outerHTML">
-                    Click Me
-                    </button>
-                </div>
-                <div id='swaped'>
-                    <p>What time is it?</p>
-                </div>
-
-            </div>
-        <div hx-get="/info"
-                hx-trigger="every 1s"
-                hx-target="#swaped"
-                >
+        <div className='block'>
+            <button
+            hx-get="https://v2.jokeapi.dev/joke/Any?format=txt&safe-mode"
+            hx-target="#output2"
+            >Amuse Me</button>
+            <p id="output2">Jokes from jokeapi.dev</p>
         </div>
+        <div hx-get="/info"
+            hx-trigger="load delay: 500ms"
+            hx-target="#swaped"
+            >
+        </div>
+        <div><p id="swaped">HTMx can you tell me what time is it?</p></div>
 
     </div>
 
