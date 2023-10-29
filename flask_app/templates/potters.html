@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% block main %}
-<p>Here is some random meme from Reddit. <a href="/meme"> Refresh </a></p>
-<p>POTTER CHARACTERS</p>
- 
-{% endblock %}
+<body class="bg">
+    <h1>HARRY POTTER CHARACTERS</h1>
+
+    <div class="block">
+        {% for person in potter_characters %}
+        <p>{{person}}</p>
+        {% endfor %}
+    </div>
+</body>
+ {% endblock %}

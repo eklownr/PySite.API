@@ -88,7 +88,9 @@ def info():
 
 @app.route('/potters')
 def potters():
-    return render_template('potters.html')
+    potter_characters = get_potter_list()
+    return render_template('potters.html', potter_characters=potter_characters)
+
 
 
 @app.route('/about')
