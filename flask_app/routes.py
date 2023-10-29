@@ -33,8 +33,9 @@ def potter():
     potter_list = get_potter_list()
     return jsonify(potter_list)
 
+
 # TEST update person-name with id
-person = [
+persons = [
     {"id": 1, "name": "eva"},
     {"id": 2, "name": "adam"},
 ]
@@ -42,7 +43,7 @@ person = [
 @app.route('/person/<int:id>', methods=['PUT'])
 def update_person(id):
     found = False
-    for p in person:
+    for p in persons:
         if p['id'] == id:
             p['name'] = request.form['name']
             found = True
@@ -55,15 +56,15 @@ def update_person(id):
 # TEST END
 
 
-# HTMX via flask
+# HTMx - flask
 @app.route('/')
 def base():
     return render_template('home.html')
 
-
 @app.route('/home')
 def home():
     return render_template('home.html')
+
 
 def get_meme():
     url = "https://meme-api.com/gimme"
@@ -78,13 +79,14 @@ def meme():
     meme_pic, subreddit, title = get_meme()
     return render_template("meme.html", meme_pic=meme_pic, subreddit=subreddit, title=title) 
 
+
 @app.route('/api/update', methods=['POST'])
 def update():
     name = request.form.get('name')
     return f'<p>Hello, {name}! <a href="/meme"> watch this meme! </a></p>'
 
-@app.route("/info", methods=['POST', 'GET'])
-def info():
+@app.route("/time", methods=['POST', 'GET'])
+def time():
     now = datetime.now()
     return f'<h3>{now.hour}:{now.minute}:{now.second} <h3/>'
 

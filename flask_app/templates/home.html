@@ -19,13 +19,12 @@
             >Amuse Me</button>
             <p id="output2">Jokes from jokeapi.dev</p>
         </div>
-        <div hx-get="/info"
-            hx-trigger="load delay: 500ms"
+        <div hx-get="/time"
+            hx-trigger="load delay:2s"
             hx-target="#swaped"
             >
         </div>
         <div><p id="swaped">HTMx can you tell me what time is it?</p></div>
-
     </div>
 
 {% endblock %}
