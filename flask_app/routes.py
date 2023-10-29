@@ -85,3 +85,12 @@ def update():
 def info():
     now = datetime.now()
     return f'<h3>{now.hour}:{now.minute}:{now.second} <h3/>'
+
+@app.route('/potters')
+def potters():
+    return render_template('potters.html')
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
