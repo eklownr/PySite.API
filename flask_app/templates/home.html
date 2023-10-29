@@ -2,7 +2,7 @@
 {% block main %}
 
     <div class="block">
-     <h1>Welcome!</h1>
+     <h1>Welcome to Flask and HTMx</h1>
         <form hx-post="/api/update" hx-target="#output">
             <label for="name">Tell me your name:</label><br>
             <input type="text" id="name" name="name">
@@ -11,7 +11,7 @@
         <div id="output" hx-swap="outerHTML"></div>
     </div>
     <div class="block">
-        <h2>HTMX</h2>
+        <h2>More HTMx</h2>
             <div className='block'>
 
                 <script src="https://unpkg.com/htmx.org@1.7.0"></script>
@@ -19,24 +19,26 @@
                 hx-get="https://v2.jokeapi.dev/joke/Any?format=txt&safe-mode"
                 hx-target="#output2"
                 >Amuse Me</button>
-                <p id="output2"></p>
+                <p id="output2">Why do Python programmers wear glasses? Because they can't C.</p>
 
-                <p>...</p>
-                <button 
-                hx-post="/info" 
-                hx-select="#swaped"
-                hx-swap="outerHTML">
-                Click Me
-                </button>
-                <div id='swaped'>
-                    <p>what time is it...?</p>
+                <div id="tell_time"> <p>...</p>
+                    <button 
+                    hx-post="/info" 
+                    hx-select="#tell_time"
+                    hx-swap="outerHTML">
+                    Click Me
+                    </button>
                 </div>
+                <div id='swaped'>
+                    <p>What time is it?</p>
+                </div>
+
             </div>
-    <div hx-get="/info"
-            hx-trigger="every 1s"
-            hx-target="#swaped"
-            >
-    </div>
+        <div hx-get="/info"
+                hx-trigger="every 1s"
+                hx-target="#swaped"
+                >
+        </div>
 
     </div>
 

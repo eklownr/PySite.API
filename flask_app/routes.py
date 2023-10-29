@@ -33,6 +33,7 @@ def potter():
     potter_list = get_potter_list()
     return jsonify(potter_list)
 
+# TEST update person-name with id
 person = [
     {"id": 1, "name": "eva"},
     {"id": 2, "name": "adam"},
@@ -51,6 +52,7 @@ def update_person(id):
         return 'Person not found', 404
 
     return 'Person updated'
+# TEST END
 
 
 # HTMX via flask
@@ -91,7 +93,10 @@ def potters():
     potter_characters = get_potter_list()
     return render_template('potters.html', potter_characters=potter_characters)
 
-
+@app.route('/api/add_potters', methods=['POST'])
+def add_potters():
+    name = request.form.get('name')
+    return f'<p>New name: {name}! </p>'
 
 @app.route('/about')
 def about():

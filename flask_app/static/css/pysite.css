@@ -29,7 +29,7 @@ p {
 }
 
 form {
-    background-color: rgb(83, 79, 79);
+    background-color: rgba(83, 79, 79), 0.6;
     padding: 2px 16px;
 }
 
@@ -39,6 +39,21 @@ input {
     padding: 2px 22px;
 }
 
+button {
+    border-color: chartreuse;
+    border-radius: 12%;
+    background-color: #333;
+    color: antiquewhite;
+    padding: 2px 22px;
+    margin-left: 22px;
+}
+
 body.bg {
     background-image: url("../image/bg_potter.png");
+  }
+
+body.sallad{
+    background-image: url("../image/sallad.png");
+    background-repeat: no-repeat;
+    background-position: top, center;
   }
