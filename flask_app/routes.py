@@ -96,7 +96,7 @@ def potters():
 @app.route('/api/add_potters', methods=['POST'])
 def add_potters():
     name = request.form.get('name')
-    return f'<p class="block">New name: "{name}" to add to the Harry Potter character list! </p>'
+    return f'<p class="dark">New name: "{name}" to add to the Harry Potter character list! </p>'
 
 @app.route('/about')
 def about():
