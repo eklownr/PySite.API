@@ -3,6 +3,15 @@
 <body class="bg">
     <h1>HARRY POTTER CHARACTERS</h1>
 
+    <div>
+        <form hx-post="/api/add_potters" hx-target="#output" class="block">
+            <label for="name">Add a new Harry Potter character</label><br>
+            <input type="text" id="name" name="name">
+            <button type="submit">ADD</button>
+        </form>
+        <div id="output" hx-swap="outerHTML">.</div>
+    </div>
+
     <div class="block">
         <table>
           <tr>
