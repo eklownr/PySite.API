@@ -9,9 +9,42 @@ def items():
     my_object = {"user_name": "Adam", "age": 29, "id": 1}
     return jsonify(my_object)
 
-@app.route('/api/add')
+persons = {
+    "id_1": {"age": 44, "name": "eva"},
+    "id_2" :{"age": 55, "name": "adam"},
+}
+
+@app.route('/api/add', methods=["GET", "POST"])
 def add_user():
-    pass
+    if request.method == "GET":
+        return jsonify(persons)
+    elif request.method == "POST":
+        print("terminal info: POST from react...")
+        # add new person. RODO: "def add_person(str: name)"
+        persons = {
+            "id_1": {"age": 44, "name": "eva"},
+            "id_2" :{"age": 55, "name": "adam"},
+            "id_3" :{"age": 55, "name": "adam"},
+        }
+        return jsonify(persons)
+    else: return "error.....!!!!!!: no get or post"
+
+
+# TEST update person-name with id
+@app.route('/api/person/<int:id>', methods=['PUT'])
+def update_person(id):
+    found = False
+    for p in persons:
+        if p['id'] == id:
+            p['name'] = request.form['name']
+            found = True
+            break
+
+    if not found:
+        return 'Person not found', 404
+
+    return 'Person updated'
+# TEST END
 
 @app.route('/api/del')
 def del_user():
@@ -33,27 +66,6 @@ def potter():
     potter_list = get_potter_list()
     return jsonify(potter_list)
 
-
-# TEST update person-name with id
-persons = [
-    {"id": 1, "name": "eva"},
-    {"id": 2, "name": "adam"},
-]
-
-@app.route('/person/<int:id>', methods=['PUT'])
-def update_person(id):
-    found = False
-    for p in persons:
-        if p['id'] == id:
-            p['name'] = request.form['name']
-            found = True
-            break
-
-    if not found:
-        return 'Person not found', 404
-
-    return 'Person updated'
-# TEST END
 
 
 # HTMx - flask
@@ -80,6 +92,7 @@ def meme():
     return render_template("meme.html", meme_pic=meme_pic, subreddit=subreddit, title=title) 
 
 
+# HTMx renderas endast på serversidan flask port 5000
 @app.route('/api/update', methods=['POST'])
 def update():
     name = request.form.get('name')
